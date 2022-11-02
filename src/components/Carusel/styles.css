@@ -1,0 +1,29 @@
+.general {
+	width: 100%;
+	margin: 2rem 0rem;
+	display: flex;
+	justify-content: center;
+}
+
+.carusel_container {
+	width: 60%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 50px;
+}
+
+.carusel_container img {
+	width: 100%;
+	margin: 0 1rem;
+}
+
+.carusel_arrow {
+	visibility: hidden;
+}
+
+.carusel_container:hover .carusel_arrow {
+	visibility: visible;
+	transition: 0.8s;
+}
