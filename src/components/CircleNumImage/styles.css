@@ -1,0 +1,7 @@
+.circle_item {
+	width: 15px;
+	height: 15px;
+	background-color: var(--gray);
+	border-radius: 50%;
+	margin: 0 3px 0 3px;
+}
