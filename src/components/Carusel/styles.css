@@ -1,45 +1,68 @@
-.general {
-	width: 100%;
-	margin: 2rem 0rem;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	border: 1px solid green;
-}
-
 .carusel_container {
-	width: 60%;
-	height: auto;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 0 50px 10px;
-	border: 1px solid black;
-	position: relative;
-	opacity: 1;
-	transition: opacity ease-in-out 0.5s;
-}
-
-.isActive {
-	opacity: 0;
-}
-
-.carusel_container img {
 	width: 100%;
-	margin: 0 1rem;
+	height: 40rem;
+}
+
+.carousel {
+	width: 100%;
+	height: 100%;
+	position: relative;
 }
 
 .carusel_arrow {
-	visibility: hidden;
-}
-
-.carusel_container:hover .carusel_arrow {
-	visibility: visible;
-	transition: 0.8s;
-}
-
-.wrapper_circle {
-	border: 1px solid black;
 	display: flex;
-	flex-direction: row;
+	height: 100%;
+	align-items: center;
+	margin: 0 0.5rem;
+	opacity: 0.8;
+}
+
+.carusel_arrow svg {
+	opacity: 0.5;
+}
+
+.carusel_arrow svg:hover {
+	opacity: 1;
+}
+
+.image {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	width: 20rem;
+	height: 35rem;
+	object-fit: cover;
+	cursor: pointer;
+	z-index: 0;
+	opacity: 0;
+	transition: 500ms;
+}
+
+.image_active {
+	opacity: 1;
+	transform: scale(1);
+	z-index: 99;
+}
+
+.image_right {
+	transform: translateX(-125%) scale(0.8);
+	transition: 500ms;
+	opacity: 0.3;
+}
+
+.image_left {
+	transform: translateX(125%) scale(0.8);
+	transition: 500ms;
+	opacity: 0.3;
+}
+
+.circle_container {
+	width: 100%;
+	height: 2.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
