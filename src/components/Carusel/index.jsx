@@ -1,8 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FiChevronLeft } from 'react-icons/fi';
 import { FiChevronRight } from 'react-icons/fi';
 import { CircleNumImage } from '../CircleNumImage';
-import { Transition } from 'react-transition-group';
 import './styles.css';
 
 export const Carusel = ({ images }) => {
@@ -83,7 +82,7 @@ export const Carusel = ({ images }) => {
 			<div className='carousel'>
 				{images.map((item, i) => {
 					const className = handleClassName(i);
-					return <img key={i} className={className} src={item} alt='image'></img>;
+					return <img key={item} className={className} src={item} alt='is' />;
 				})}
 			</div>
 			<div className='circle_container'>
@@ -91,7 +90,13 @@ export const Carusel = ({ images }) => {
 					<FiChevronLeft size={30} />
 				</div>
 				{images.map((_, i) => {
-					return <CircleNumImage index={i} currentIndex={index} onClick={() => chooseImage(i)} />;
+					return (
+						<CircleNumImage
+							index={i}
+							currentIndex={index}
+							onClick={() => chooseImage(i)}
+						/>
+					);
 				})}
 				<div className='carusel_arrow' onClick={nextHandler}>
 					<FiChevronRight size={30} />

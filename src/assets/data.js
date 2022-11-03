@@ -5,3 +5,10 @@ export const images = [
 	'https://cdn.pixabay.com/photo/2020/02/28/10/44/shoes-4887100_960_720.jpg',
 	'https://cdn.pixabay.com/photo/2020/02/24/06/00/sports-4875288_960_720.jpg',
 ];
+
+export const pictures = [
+	'http://fe.it-academy.by/Sites/0000007/sax.jpg',
+	'http://fe.it-academy.by/Sites/0000007/Yin_and_Yang.png',
+	'http://fe.it-academy.by/Sites/0000007/Man-and-woman.png',
+	'http://fe.it-academy.by/Sites/0000007/No_smoking.png',
+];
