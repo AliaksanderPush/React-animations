@@ -1,42 +1,27 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import { pictures } from '../../assets/data';
 import './styles.css';
 
 export const DragDropBoard = () => {
-	const refElem = useRef();
+	const refParent = useRef();
 	let mousePrevLeft = 0;
 	let mousePrevTop = 0;
 	let currentImg;
 
-	const refCallback = (el) => {
-		if (el) {
-			const pos = getElementPos(el);
-			el.style.left = pos.left + 'px';
-			el.style.top = pos.top + 'px';
-			addPosition(el);
-		}
-	};
-
-	const addPosition = (elem) => {
-		elem.style.position = 'absolute';
-	};
-
-	function getElementPos(el) {
+	const getElementPos = (el) => {
 		const bbox = el.getBoundingClientRect();
 		return {
 			left: bbox.left + window.pageXOffset,
 			top: bbox.top + window.pageYOffset,
 		};
-	}
+	};
 
 	const imageMouseDown = (e) => {
-		console.log('mouseDown=>', e.target);
 		e.preventDefault();
 		currentImg = e.target;
 		mousePrevLeft = e.pageX;
 		mousePrevTop = e.pageY;
-		console.log('body=>', refElem);
-		refElem.current.append(currentImg);
+		refParent.current.append(currentImg);
 		currentImg.style.cursor = 'grabbing';
 		window.addEventListener('mousemove', imageMouseMove);
 	};
@@ -58,15 +43,28 @@ export const DragDropBoard = () => {
 		window.removeEventListener('mousemove', imageMouseMove);
 	};
 
+	const imageStart = () => {
+		const images = refParent.current.childNodes;
+		images.forEach((image) => {
+			const pos = getElementPos(image);
+			image.style.left = pos.left + 'px';
+			image.style.top = pos.top + 'px';
+		});
+		images.forEach((image) => (image.style.position = 'absolute'));
+	};
+
+	useEffect(() => {
+		imageStart();
+	}, []);
+
 	return (
-		<div className='drag_drop_board' ref={refElem}>
+		<div className='drag_drop_board' ref={refParent}>
 			{pictures?.map((item) => {
 				return (
 					<img
 						key={item}
 						src={item}
 						alt='ie'
-						ref={refCallback}
 						onMouseDown={(e) => imageMouseDown(e)}
 						onMouseUp={(e) => imageMouseUp(e)}
 					/>

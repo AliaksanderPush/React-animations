@@ -85,19 +85,23 @@ export const Carusel = ({ images }) => {
 					return <img key={item} className={className} src={item} alt='is' />;
 				})}
 			</div>
+
 			<div className='circle_container'>
 				<div className='carusel_arrow' onClick={prevHandler}>
 					<FiChevronLeft size={30} />
 				</div>
-				{images.map((_, i) => {
-					return (
-						<CircleNumImage
-							index={i}
-							currentIndex={index}
-							onClick={() => chooseImage(i)}
-						/>
-					);
-				})}
+				<div className='circle_box'>
+					{images.map((_, i) => {
+						return (
+							<CircleNumImage
+								key={i}
+								index={i}
+								currentIndex={index}
+								onClick={() => chooseImage(i)}
+							/>
+						);
+					})}
+				</div>
 				<div className='carusel_arrow' onClick={nextHandler}>
 					<FiChevronRight size={30} />
 				</div>
