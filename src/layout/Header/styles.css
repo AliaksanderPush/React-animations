@@ -1,19 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
-
-* {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-	font-family: 'Montserrat', sans-serif;
-}
-
 header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	height: 80px;
 	padding: 0 2rem;
-	background-color: var(--green);
+	background-color: var(--black);
 	color: var(--white);
 }
 
@@ -53,8 +44,9 @@ nav {
 
 	header nav {
 		position: fixed;
-		top: 80px;
+		top: 134px;
 		right: 0;
+		z-index: 2000;
 		height: calc(100vh - 80px);
 		width: 50%;
 		display: flex;
@@ -62,7 +54,7 @@ nav {
 		align-items: center;
 		justify-content: center;
 		gap: 1.5rem;
-		background-color: var(--green);
+		background-color: var(--black);
 		transition: 1s;
 		transform: translateX(50vw);
 	}

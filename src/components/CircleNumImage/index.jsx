@@ -6,7 +6,7 @@ export const CircleNumImage = ({ index, currentIndex, onClick }) => {
 		<div
 			className='circle_item'
 			onClick={onClick}
-			style={{ backgroundColor: index === currentIndex ? '#787878' : '#d9d2d2' }}
+			style={{ backgroundColor: index === currentIndex ? '#DE6D25' : '#d9d2d2' }}
 		></div>
 	);
 };

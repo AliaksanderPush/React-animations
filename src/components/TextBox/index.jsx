@@ -1,5 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { text } from '../../assets/data';
+import unsplash from '../../assets/img/unsplash.png';
+import unsplash2 from '../../assets/img/unsplash2.png';
+import { text, text2, text3 } from '../../assets/data';
 import './styles.css';
 
 export const TextBox = () => {
@@ -38,6 +40,14 @@ export const TextBox = () => {
 		};
 	};
 
+	const hideText = () => {
+		let className = 'text_item';
+		if (isAnimation) {
+			className = 'text_item _anime';
+		}
+		return className;
+	};
+
 	useEffect(() => {
 		window.addEventListener('scroll', animOnScroll);
 		if ('ontouchmove' in window) {
@@ -46,13 +56,38 @@ export const TextBox = () => {
 		return () => window.removeEventListener('scroll', animOnScroll);
 	}, [animOnScroll]);
 
+	const textAnime = hideText();
 	return (
 		<div className='text_box_container'>
-			<div className={!isAnimation ? 'text_content' : 'text_content _anime'}>
-				<p className={!isAnimation ? 'text_item' : 'text_item _anime'} ref={textRef}>
-					{text}
-				</p>
+			<div className='image_box'>
+				<div className='first_image'>
+					<img src={unsplash} alt='splash1' />
+				</div>
+				<div className='second_image'>
+					<img src={unsplash2} alt='splash2' />
+				</div>
+			</div>
+			<div className='text_box'>
+				<h2>новая коллекция</h2>
+				<span>осень-зима 2022/23</span>
+				<div className={!isAnimation ? 'text_content' : 'text_content _anime'}>
+					<p className={textAnime} ref={textRef}>
+						{text}
+					</p>
+					<p className={textAnime}>{text2}</p>
+					<p className={textAnime}>{text3}</p>
+				</div>
 			</div>
 		</div>
 	);
 };
+
+/*
+
+<div className={!isAnimation ? 'text_content' : 'text_content _anime'}>
+				<p className={!isAnimation ? 'text_item' : 'text_item _anime'} ref={textRef}>
+					{text}
+				</p>
+			</div>
+
+			*/

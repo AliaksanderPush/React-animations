@@ -1,6 +1,11 @@
 import React, { useCallback, useEffect, useRef } from 'react';
-import { pictures } from '../../assets/data';
+import bron from '../../assets/img/bron.png';
+import bonus from '../../assets/img/bonus.png';
+import shoes from '../../assets/img/shoes.png';
+import dilivery from '../../assets/img/dilivery.png';
 import './styles.css';
+
+const pictures = [shoes, dilivery, bonus, bron];
 
 export const DragDropBoard = () => {
 	const refParent = useRef();
@@ -58,18 +63,21 @@ export const DragDropBoard = () => {
 	}, [imageStart]);
 
 	return (
-		<div className='drag_drop_board' ref={refParent}>
-			{pictures?.map((item) => {
-				return (
-					<img
-						key={item}
-						src={item}
-						alt='ie'
-						onMouseDown={(e) => imageMouseDown(e)}
-						onMouseUp={(e) => imageMouseUp(e)}
-					/>
-				);
-			})}
+		<div className='board_container'>
+			<h2>Наши преемущества</h2>
+			<div className='drag_drop_board' ref={refParent}>
+				{pictures?.map((item) => {
+					return (
+						<img
+							key={item}
+							src={item}
+							alt='ie'
+							onMouseDown={(e) => imageMouseDown(e)}
+							onMouseUp={(e) => imageMouseUp(e)}
+						/>
+					);
+				})}
+			</div>
 		</div>
 	);
 };

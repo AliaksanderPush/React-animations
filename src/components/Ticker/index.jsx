@@ -7,7 +7,9 @@ export const Ticker = ({ text }) => {
 	return (
 		<div className='container'>
 			<div className='ticket' onClick={() => setMoving(!moving)}>
-				<span style={{ animationPlayState: moving ? 'running' : 'paused' }}>{text}</span>
+				<span style={{ animationPlayState: moving ? 'running' : 'paused' }}>
+					Комфорт в каждой паре
+				</span>
 			</div>
 		</div>
 	);

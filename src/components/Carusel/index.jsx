@@ -2,9 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { FiChevronLeft } from 'react-icons/fi';
 import { FiChevronRight } from 'react-icons/fi';
 import { CircleNumImage } from '../CircleNumImage';
+import Rectangle1 from '../../assets/img/Rectangle1.png';
+import Rectangle2 from '../../assets/img/Rectangle2.png';
+import Rectangle3 from '../../assets/img/Rectangle3.png';
 import './styles.css';
 
-export const Carusel = ({ images }) => {
+const images = [Rectangle1, Rectangle2, Rectangle3];
+
+export const Carusel = () => {
 	const [index, setIndex] = useState(1);
 	const [stopCarusel, setStopCarusel] = useState(true);
 

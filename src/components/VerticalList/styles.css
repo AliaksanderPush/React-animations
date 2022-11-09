@@ -1,22 +1,23 @@
-.remove-btn {
-	width: 1rem;
-	height: 1rem;
-	background-color: var(--red);
-	color: var(--white);
-	border: none;
-	border-radius: 10%;
-	margin: 0rem 1rem 1rem 0rem;
-}
 .list_container {
 	width: 100%;
-	height: 10rem;
-	margin: 1rem 0rem;
-	padding: 0rem 2rem;
+	height: 600px;
+	display: flex;
+	justify-content: space-between;
+	padding: 60px;
+}
+.list_container span {
+	text-align: center;
 }
 
-.list_container > div {
-	padding: 0rem 1rem;
-	margin: 1rem 0rem;
+.image_block {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.image_block img {
+	width: 816px;
+	height: 437px;
 }
 
 .item-enter {
@@ -32,4 +33,13 @@
 .item-exit-active {
 	opacity: 0;
 	transition: opacity 700ms ease-in;
+}
+.remove-btn {
+	width: 1rem;
+	height: 1rem;
+	background-color: var(--orange);
+	color: var(--white);
+	border: none;
+	border-radius: 10%;
+	margin: 0rem 1rem 1rem 0rem;
 }

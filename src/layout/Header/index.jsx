@@ -1,9 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React, { Children, useRef, useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { VscAzure } from 'react-icons/vsc';
+import { Logo } from '../../components/UI/Logo';
 import './styles.css';
 
-export const Header = () => {
+export const Header = ({ children }) => {
 	const navRef = useRef();
 	const [changeIcon, setChangeIcon] = useState(true);
 	const showNavbar = () => {
@@ -17,12 +18,12 @@ export const Header = () => {
 
 	return (
 		<header>
-			<VscAzure size={40} />
+			<Logo />
 			<nav ref={navRef}>
-				<a href='/#'>Home</a>
-				<a href='/#'>VironIt</a>
-				<a href='/#'>Blog</a>
-				<a href='/#'>About</a>
+				<a href='/#'>Хит продаж</a>
+				<a href='/#'>Каталог</a>
+				<a href='/#'>Контакты</a>
+				<a href='/#'>О бренде</a>
 			</nav>
 			<button className='nav-btn nav-close-btn' onClick={showNavbar}>
 				{changeIcon ? <FaTimes /> : <FaBars />}
@@ -30,8 +31,3 @@ export const Header = () => {
 		</header>
 	);
 };
-/*
-	<button className='nav-btn nav-close-btn' onClick={showNavbar}>
-					{changeIcon ? <FaTimes /> : <FaBars />}
-				</button>
-				*/
