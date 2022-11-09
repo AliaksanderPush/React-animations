@@ -3,6 +3,7 @@
 	margin-top: 5rem;
 	border: 1px solid green;
 	background-color: var(--green);
+	transition: all 0.8s ease 0s;
 }
 
 .text_content {
@@ -10,4 +11,21 @@
 	padding: 2rem 0rem;
 	margin: auto;
 	text-align: justify;
+}
+
+.text_content._anime {
+	background-color: var(--green);
+	background-color: green;
+	transition: all 2s ease 0.5s;
+}
+
+.text_item {
+	opacity: 1;
+	color: var(--black);
+	transition: all 0.8s ease 0s;
+}
+
+.text_item._anime {
+	opacity: 0;
+	transition: all 2s ease 0.5s;
 }

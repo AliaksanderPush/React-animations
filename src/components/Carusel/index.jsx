@@ -81,8 +81,8 @@ export const Carusel = ({ images }) => {
 		<div className='carusel_container'>
 			<div className='carousel'>
 				{images.map((item, i) => {
-					const className = handleClassName(i);
-					return <img key={item} className={className} src={item} alt='is' />;
+					const classes = handleClassName(i);
+					return <img key={item} className={classes} src={item} alt='is' />;
 				})}
 			</div>
 

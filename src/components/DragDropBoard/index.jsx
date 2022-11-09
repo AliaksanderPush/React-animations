@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { pictures } from '../../assets/data';
 import './styles.css';
 
@@ -43,7 +43,7 @@ export const DragDropBoard = () => {
 		window.removeEventListener('mousemove', imageMouseMove);
 	};
 
-	const imageStart = () => {
+	const imageStart = useCallback(() => {
 		const images = refParent.current.childNodes;
 		images.forEach((image) => {
 			const pos = getElementPos(image);
@@ -51,11 +51,11 @@ export const DragDropBoard = () => {
 			image.style.top = pos.top + 'px';
 		});
 		images.forEach((image) => (image.style.position = 'absolute'));
-	};
+	}, []);
 
 	useEffect(() => {
 		imageStart();
-	}, []);
+	}, [imageStart]);
 
 	return (
 		<div className='drag_drop_board' ref={refParent}>
